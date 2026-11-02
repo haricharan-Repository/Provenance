@@ -1,0 +1,22 @@
+{
+  "name": "truthline",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Requirement -> Risk -> Test -> Proof -> Pipeline -> Verdict",
+  "type": "module",
+  "scripts": {
+    "test": "playwright test",
+    "typecheck": "tsc --noEmit",
+    "test:tools": "tsx --test tools/truthline/*.test.ts",
+    "tl": "tsx tools/truthline/cli.ts",
+    "demo": "tsx demo-app/server.ts"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.14.0",
+    "@playwright/test": "1.64.1",
+    "@types/node": "26.6.6",
+    "fast-xml-parser": "5.11.2",
+    "tsx": "4.23.15",
+    "typescript": "5.9.3"
+  }
+}

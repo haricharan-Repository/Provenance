@@ -1,0 +1,210 @@
+{
+  "date": "2026-11-02",
+  "tests": [
+    {
+      "key": "api/coupon.api.spec.ts › REQ-142 returns COUPON_EXPIRED for an expired coupon @REQ-142 @risk-high @api @negative",
+      "verdict": "PROVEN",
+      "mutations": [
+        {
+          "name": "flip L16 toBe",
+          "result": "KILLED"
+        },
+        {
+          "name": "flip L17 toEqual",
+          "result": "KILLED"
+        }
+      ],
+      "stability": "5/5"
+    },
+    {
+      "key": "api/coupon.api.spec.ts › REQ-142 accepts a coupon expiring today @REQ-142 @risk-high @api @boundary",
+      "verdict": "PROVEN",
+      "mutations": [
+        {
+          "name": "flip L28 toBe",
+          "result": "KILLED"
+        },
+        {
+          "name": "flip L29 toEqual",
+          "result": "KILLED"
+        }
+      ],
+      "stability": "5/5"
+    },
+    {
+      "key": "api/coupon.api.spec.ts › REQ-142 caps coupon codes at 20 characters @REQ-142 @risk-high @api @boundary",
+      "verdict": "PROVEN",
+      "mutations": [
+        {
+          "name": "flip L39 toBe",
+          "result": "KILLED"
+        },
+        {
+          "name": "flip L40 toEqual",
+          "result": "KILLED"
+        }
+      ],
+      "stability": "5/5"
+    },
+    {
+      "key": "api/coupon.api.spec.ts › REQ-143 returns the discounted total @REQ-143 @risk-medium @api",
+      "verdict": "PROVEN",
+      "mutations": [
+        {
+          "name": "flip L51 toBe",
+          "result": "KILLED"
+        },
+        {
+          "name": "flip L52 toEqual",
+          "result": "KILLED"
+        }
+      ],
+      "stability": "5/5"
+    },
+    {
+      "key": "api/coupon.api.spec.ts › REQ-143 rejects an empty coupon code @REQ-143 @risk-medium @api @negative",
+      "verdict": "PROVEN",
+      "mutations": [
+        {
+          "name": "flip L62 toBe",
+          "result": "KILLED"
+        },
+        {
+          "name": "flip L63 toEqual",
+          "result": "KILLED"
+        }
+      ],
+      "stability": "5/5"
+    },
+    {
+      "key": "api/coupon.api.spec.ts › REQ-144 refuses anonymous coupon requests @REQ-144 @risk-low @api @smoke",
+      "verdict": "PROVEN",
+      "mutations": [
+        {
+          "name": "flip L77 toBe",
+          "result": "KILLED"
+        },
+        {
+          "name": "flip L78 toEqual",
+          "result": "KILLED"
+        }
+      ],
+      "stability": "5/5"
+    },
+    {
+      "key": "e2e/coupon.spec.ts › REQ-142 rejects coupon after expiry @REQ-142 @risk-high @ui @negative",
+      "verdict": "PROVEN",
+      "mutations": [
+        {
+          "name": "flip L16 toHaveText",
+          "result": "KILLED"
+        },
+        {
+          "name": "flip L17 toHaveText",
+          "result": "KILLED"
+        },
+        {
+          "name": "skip step \"Apply a coupon that expired yesterday\"",
+          "result": "KILLED"
+        },
+        {
+          "name": "tamper **/api/coupons/apply → 200 {\"totalCents\":1}",
+          "result": "KILLED"
+        }
+      ],
+      "stability": "15/15"
+    },
+    {
+      "key": "e2e/coupon.spec.ts › REQ-142 accepts coupon on its expiry date @REQ-142 @risk-high @ui @boundary",
+      "verdict": "PROVEN",
+      "mutations": [
+        {
+          "name": "flip L32 toHaveText",
+          "result": "KILLED"
+        },
+        {
+          "name": "flip L33 toHaveText",
+          "result": "KILLED"
+        },
+        {
+          "name": "skip step \"Apply a coupon that expires today\"",
+          "result": "KILLED"
+        },
+        {
+          "name": "tamper **/api/coupons/apply → 422 {\"error\":\"COUPON_EXPIRED\"}",
+          "result": "KILLED"
+        }
+      ],
+      "stability": "15/15"
+    },
+    {
+      "key": "e2e/coupon.spec.ts › REQ-142 keeps the total when the coupon service fails @REQ-142 @risk-high @ui @negative @stubbed",
+      "verdict": "PROVEN",
+      "mutations": [
+        {
+          "name": "flip L54 toHaveText",
+          "result": "KILLED"
+        },
+        {
+          "name": "flip L55 toHaveText",
+          "result": "KILLED"
+        },
+        {
+          "name": "skip step \"The coupon service returns a 500\"",
+          "result": "KILLED"
+        },
+        {
+          "name": "skip step \"Apply a valid coupon\"",
+          "result": "KILLED"
+        }
+      ],
+      "stability": "15/15"
+    },
+    {
+      "key": "e2e/coupon.spec.ts › REQ-143 applies a valid coupon to the total @REQ-143 @risk-medium @ui @smoke",
+      "verdict": "PROVEN",
+      "mutations": [
+        {
+          "name": "flip L70 toHaveText",
+          "result": "KILLED"
+        },
+        {
+          "name": "flip L71 toHaveText",
+          "result": "KILLED"
+        },
+        {
+          "name": "skip step \"Apply a 25% coupon\"",
+          "result": "KILLED"
+        },
+        {
+          "name": "tamper **/api/coupons/apply → 500 {}",
+          "result": "KILLED"
+        }
+      ],
+      "stability": "5/5"
+    },
+    {
+      "key": "e2e/coupon.spec.ts › REQ-143 explains an unknown coupon @REQ-143 @risk-medium @ui @negative",
+      "verdict": "PROVEN",
+      "mutations": [
+        {
+          "name": "flip L82 toHaveText",
+          "result": "KILLED"
+        },
+        {
+          "name": "flip L83 toHaveText",
+          "result": "KILLED"
+        },
+        {
+          "name": "skip step \"Apply a code that does not exist\"",
+          "result": "KILLED"
+        },
+        {
+          "name": "remove #msg",
+          "result": "KILLED"
+        }
+      ],
+      "stability": "5/5"
+    }
+  ]
+}

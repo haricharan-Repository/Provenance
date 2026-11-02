@@ -1,0 +1,3 @@
+[
+  { "glob": "demo-app/**", "reqs": ["REQ-142", "REQ-143", "REQ-144"] }
+]

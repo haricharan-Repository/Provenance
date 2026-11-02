@@ -1,0 +1,5 @@
+{
+  "riskBands": { "high": 40, "medium": 15 },
+  "stability": { "repeatEach": 5 },
+  "verdict": { "goMinScore": 90, "noGoBelowScore": 60 }
+}

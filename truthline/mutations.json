@@ -1,0 +1,33 @@
+[
+  {
+    "match": "@REQ-142 @negative",
+    "kind": "api-tamper",
+    "url": "**/api/coupons/apply",
+    "status": 200,
+    "body": {
+      "totalCents": 1
+    },
+    "except": "@stubbed"
+  },
+  {
+    "match": "@REQ-142 @boundary",
+    "kind": "api-tamper",
+    "url": "**/api/coupons/apply",
+    "status": 422,
+    "body": {
+      "error": "COUPON_EXPIRED"
+    }
+  },
+  {
+    "match": "@REQ-143 @smoke",
+    "kind": "api-tamper",
+    "url": "**/api/coupons/apply",
+    "status": 500,
+    "body": {}
+  },
+  {
+    "match": "@REQ-143 @negative",
+    "kind": "element-remove",
+    "selector": "#msg"
+  }
+]
